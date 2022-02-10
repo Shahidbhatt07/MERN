@@ -49,3 +49,18 @@ console.log(typeof str);
 
 str='how u doin?'
 console.log(str);
+ //for line drops use \n
+str="how r u doing?\n how is ur family?\n what do u do?"
+console.log(str);
+
+//for line drops use `` backtics
+str=`how r u doing?
+              how is ur family?
+     what do u do?`
+     
+
+     //use of `` backtics
+     //Example of half of a number
+
+     var num=200;
+     console.log(`half of ${num} is ${num/2}`);
