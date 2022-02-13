@@ -64,3 +64,41 @@ str=`how r u doing?
 
      var num=200;
      console.log(`half of ${num} is ${num/2}`);
+
+     //var has some problems/drawbacks
+     // 1). redeclaration is allowed
+
+     var r="hello";
+     console.log(r);
+
+     var r=100;
+     console.log(r);
+
+     // To overcome redeclaration 
+     // let keyword is used
+
+     let l=100;
+     console.log(l);
+
+    //  let l="200"; //SyntaxError: Identifier 'l' has already been declared
+    //  console.log(l);
+    
+    //we can reinitialise the variable but we can nor redeclare variable
+    l=300;
+    console.log(l);
+
+    //Loops in JS
+     
+    var num=10;
+    for(var i=0;i<num;i++){
+      if(i%2==0){
+          console.log("num is even")
+      }
+    }
+
+    //Const    Neither redeclare nor reinitialise
+    const b=2;
+    console.log(b);
+
+     const b=4
+    //  b=4 //TypeError: Assignment to constant variable.
