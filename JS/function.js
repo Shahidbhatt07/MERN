@@ -70,7 +70,7 @@ let a = add(2, 3);
 // a = 5;
 console.log(a);
 
-let additionIIFE = (function (a, b) {
+let additionIIFE = (function (a, b){
   console.log(a + b);
 })(20, 30);
 
