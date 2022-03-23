@@ -11,7 +11,7 @@ console.log(inputArr);
 let filesArr = [];
 let optionsArr = [];
 //===============> placed files path in filesArr <=============
-for (let i = 0; i < inputArr.length; i++){
+for (let i = 0; i<inputArr.length; i++){
     let firstChar = inputArr[i].charAt(0);
     // console.log(firstChar);
     if (firstChar == '-') {
@@ -43,8 +43,9 @@ for (let i = 0; i < filesArr.length; i++){
 console.log(content);
 
 let contentArr = content.split("\r\n");
+console.table(contentArr);
 
-//check if -s is present or not
+// //check if -s is present or not
 let isSPresent = optionsArr.includes("-s");
 if (isSPresent) {
     for (let i = 1; i < contentArr.length; i++){
