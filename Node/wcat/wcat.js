@@ -43,7 +43,7 @@ for (let i = 0; i < filesArr.length; i++){
 console.log(content);
 
 let contentArr = content.split("\r\n");
-console.table(contentArr);
+console.log(contentArr);
 
 // //check if -s is present or not
 let isSPresent = optionsArr.includes("-s");
@@ -56,7 +56,7 @@ if (isSPresent) {
             contentArr[i] = null;
         }
     }
-    console.table(contentArr);
+    console.log(contentArr);
     let tempArr = [];
     //push everything in tempArr except null
     for (let i = 0; i < contentArr.length; i++){
