@@ -16,4 +16,8 @@ Edge cases:
 
 1- If file entered is not found then it gives file does not exist error. ✅
 <br>2- -n and -b are 2 options which are mutually exclusive so if user types both of them together only the first enter option should work.
+<<<<<<< HEAD
 <br>3- -s and any or both -n and -b present then -s will be executed first and then -n and -b according second rule
+=======
+<br>3- -s and any or both -n and -b present then -s will be executed first and then -n and -b according second rule
+>>>>>>> 4b42df61fd5fcd68a4d474a13fccebe449b7396a
