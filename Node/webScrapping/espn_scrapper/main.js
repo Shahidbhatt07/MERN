@@ -1,5 +1,10 @@
 let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595";
+<<<<<<< HEAD
 
+=======
+const fs = require ("fs");
+const path = require("path");
+>>>>>>> 8387b35 (project hackerrank started)
 const request = require("request");
 const cheerio = require("cheerio");
 const allMatchObj = require("./allMatch");
@@ -13,6 +18,14 @@ function cb(err, res, body) {
   }
 }
 
+<<<<<<< HEAD
+=======
+let iplPath = path.join(__dirname,"IPL");
+if (!fs.existsSync(iplPath)) {
+  fs.mkdirSync(iplPath);
+}
+
+>>>>>>> 8387b35 (project hackerrank started)
 function handleHTML(html){
     let selecTool = cheerio.load(html);
     let anchorElem = selecTool('a[data-hover="View All Results"]');

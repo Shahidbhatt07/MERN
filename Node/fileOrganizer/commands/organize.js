@@ -90,8 +90,12 @@ function copyFileToDest(srcPath, fullPathOfFile, folderName) {
 }
 
 
-// let srcPath="/Users/abhishekgoel/Desktop/Desktop/AbhishekGoel/FJP5/Node/fileOrganizer/downloads"
-// organize(srcPath);
+// <<<<<<< HEAD
+// // let srcPath="/Users/abhishekgoel/Desktop/Desktop/AbhishekGoel/FJP5/Node/fileOrganizer/downloads"
+// =======
+// // let srcPath="C:\Users\Shahid Bhat\Desktop\FJP-5\Node\fileOrganizer\downloads"
+// >>>>>>> 8387b35 (project hackerrank started)
+// // organize(srcPath);
 
 module.exports = {
   organize:organize

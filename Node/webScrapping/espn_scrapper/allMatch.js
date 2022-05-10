@@ -24,7 +24,11 @@ function extractAllMatchLink(html){
         let fullLink = "https://www.espncricinfo.com" + scorecardLink;
         // getScorecardObj.gifs(fullLink);
         gifs(fullLink);
+<<<<<<< HEAD
         break;
+=======
+        // break;
+>>>>>>> 8387b35 (project hackerrank started)
 
     }
 }
