@@ -17,3 +17,10 @@ what not to read -> `await` accepts “thenables”, Async class methods , `asyn
 [https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget)
 
 [https://developer.mozilla.org/en-US/docs/Web/API/Event/target](https://developer.mozilla.org/en-US/docs/Web/API/Event/target)
+
+
+17/05/22
+
+[https://javascript.plainenglish.io/how-to-use-stringify-and-parse-in-javascript-6b637b571a32](https://javascript.plainenglish.io/how-to-use-stringify-and-parse-in-javascript-6b637b571a32)
+
+[https://www.freecodecamp.org/news/json-stringify-example-how-to-parse-a-json-object-with-javascript/](https://www.freecodecamp.org/news/json-stringify-example-how-to-parse-a-json-object-with-javascript/)
