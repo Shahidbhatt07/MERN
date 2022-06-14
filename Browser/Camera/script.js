@@ -22,17 +22,26 @@ navigator.mediaDevices.getUserMedia(constraints)
     recorder.addEventListener("start", (e) => {
         //memory
         chunks = [];
+        console.log('rec started');
     })
 
     recorder.addEventListener("dataavailable", (e) => {
         chunks.push(e.data);
+        console.log('recording pushed in chunks');
     });
 
     recorder.addEventListener("stop", () => {
         //convert video 
-        // let blob = new Blob(chunks, { type: 'video/mp4' });
-
+        let blob = new Blob(chunks, { type: 'video/mp4' });
+        console.log('rec stopped');
         // download video on desktop
+        let videoURL = URL.createObjectURL(blob);
+        console.log(videoURL);
+        
+        let a = document.createElement('a');
+        a.href = videoURL;
+        a.download = "myVideo.mp4";
+        a.click();
         //store in database
     })
 
@@ -41,7 +50,9 @@ navigator.mediaDevices.getUserMedia(constraints)
 
 //click photo
 captureBtnCont.addEventListener("click", () => {
+    captureBtn.classList.add("scale-capture");
     let canvas = document.createElement("canvas");
+
     let tool = canvas.getContext("2d");
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
@@ -56,6 +67,9 @@ captureBtnCont.addEventListener("click", () => {
     // let img = document.createElement("img");
     // img.src = imageURL;
     // document.body.append(img);
+    setTimeout(() => {
+        captureBtn.classList.remove("scale-capture");
+    }, 510);
 
 });
 
@@ -63,6 +77,7 @@ recordBtnCont.addEventListener("click", () => {
     
     shouldRecord = !shouldRecord;
     if (shouldRecord) {
+        recordBtn.classList.add("scale-record");
         //recording start
         recorder.start();
         //start timer
@@ -70,6 +85,7 @@ recordBtnCont.addEventListener("click", () => {
     }
 
     else {
+        recordBtn.classList.remove("scale-record");
         //stop the recording
         recorder.stop();
         // stop the timer
@@ -78,5 +94,53 @@ recordBtnCont.addEventListener("click", () => {
 
 });
 
+let timer = document.querySelector('.timer');
 
+let counter = 0;
+let timerID;
+function startTimer() {
+    timer.style.display = 'block';
+    function displayTimer(){
+        let totalSeconds = counter;
+
+        let hours = Number.parseInt(totalSeconds / 3600);
+        totalSeconds = totalSeconds % 3600;
+
+        let minutes = Number.parseInt(totalSeconds / 60);
+        totalSeconds = totalSeconds % 60;
+
+        let seconds = totalSeconds;
+
+        hours = (hours < 10) ? `0 ${hours}` : hours;
+        minutes = (minutes < 10) ? `0 ${minutes}` : minutes;
+        seconds = (seconds < 10) ? `0 ${seconds}` : seconds;
+        timer.innerText = `${hours}:${minutes}:${seconds}`;
+
+        counter++;
+
+    }
+
+    timerID = setInterval(displayTimer, 1000);
+    counter = 0;
+
+}
+
+function stopTimer() {
+    clearInterval(timerID);
+    timer.innerText = "00:00:00";
+    timer.style.display = 'none';
+}
+
+
+//filters add 
+
+let filterLayer = document.querySelector(".filter-layer");
+let allFilters = document.querySelectorAll(".filter");
+
+allFilters.forEach((filterElem) => {
+    filterElem.addEventListener('click', () => {
+        transparentColor = getComputedStyle(filterElem).getPropertyValue('background-color');
+        filterLayer.style.backgroundColor = transparentColor;
+    })
+})
 
